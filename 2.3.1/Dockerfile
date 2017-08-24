@@ -99,7 +99,8 @@ RUN chmod +x /root/run.sh ;\
     apt-get autoclean ;\
     apt-get autoremove ;\
     rm -rf /var/lib/apt/lists/* ;\
-    rm -rf /var/cache/apt/archives/* ;
+    rm -rf /var/cache/apt/archives/* ;\
+    sed -i "s/mysqli.default_port = 3306/mysqli.default_port = 3307/g" /etc/php5/apache2/php.ini ;
 
 EXPOSE 80
 EXPOSE 443
